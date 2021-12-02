@@ -80,10 +80,7 @@ function UsersTable({ columns, data }) {
 }
 
 export default function Home() {
-  const { data, error } = useSWR(
-    "https://jsonplaceholder.typicode.com/users",
-    fetcher
-  );
+  const { data, error } = useSWR("/users", fetcher);
 
   const columns = React.useMemo(
     () => [
@@ -110,8 +107,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="container m-4 w-full">
-        <h1 className="text-3xl font-bold mb-4">Test technique Iconosquare</h1>
+      <main className="w-screen h-screen bg-pink-50 p-4 md:p-10">
+        <h1 className="text-3xl font-bold mb-4 text-pink-600">
+          Test technique Iconosquare
+        </h1>
         <UsersTable columns={columns} data={data} />
       </main>
     </div>
