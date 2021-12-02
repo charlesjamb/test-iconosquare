@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import Link from "next/link";
 import useSWR from "swr";
 import { useTable, useFilters } from "react-table";
 
@@ -11,6 +12,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Card from "@mui/material/Card";
 import TextField from "@mui/material/TextField";
+import { Link as MUILink } from "@mui/material";
 
 import { fetcher } from "../utils.js";
 
@@ -87,6 +89,11 @@ export default function Home() {
       {
         Header: "Name",
         accessor: "name",
+        Cell: ({ row, value }) => (
+          <Link href={`/users/${row.original.id}`} passHref>
+            <MUILink>{value}</MUILink>
+          </Link>
+        ),
       },
       {
         Header: "Email",
