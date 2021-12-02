@@ -23,5 +23,7 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 [CSS](https://tailwindcss.com/)
 
 [Call API](https://swr.vercel.app/)
+
 [Composants de base](https://headlessui.dev/react/popover)
+
 [Mock API des tests](https://mswjs.io/)
