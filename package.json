@@ -6,12 +6,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest --watch"
+    "test": "jest --watch --verbose"
   },
   "dependencies": {
     "next": "12.0.4",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "swr": "^1.1.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.15.1",
@@ -20,9 +21,11 @@
     "eslint": "7.32.0",
     "eslint-config-next": "12.0.4",
     "jest": "^27.4.3",
+    "msw": "^0.35.0",
     "postcss": "^8.4.4",
     "prettier": "2.5.0",
     "react-test-renderer": "^17.0.2",
-    "tailwindcss": "^2.2.19"
+    "tailwindcss": "^2.2.19",
+    "whatwg-fetch": "^3.6.2"
   }
 }
