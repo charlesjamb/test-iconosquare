@@ -1,29 +1,19 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
 # Test technique Iconosquare
 
-[CSS](https://tailwindcss.com/)
+_Stack_
 
-[Call API](https://swr.vercel.app/)
+- React & Next
+- TailwindCSS
+- Material UI
+- swr (pour le data fetching)
+- Jest & React Testing Library
+- msw (pour mocker les calls à l'API)
 
-[Composants de base](https://headlessui.dev/react/popover)
+_To run:_
 
-[Mock API des tests](https://mswjs.io/)
+1. `npm install`
+2. `npm run dev`
+
+_To test:_
+
+- `npm run test`
