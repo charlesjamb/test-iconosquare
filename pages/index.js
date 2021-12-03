@@ -107,7 +107,7 @@ export default function Home() {
   if (!data) return <div>loading...</div>;
 
   return (
-    <div>
+    <>
       <Head>
         <title>Test Iconosquare</title>
         <meta name="description" content="Test technique iconosquare" />
@@ -120,6 +120,6 @@ export default function Home() {
         </h1>
         <UsersTable columns={columns} data={data} />
       </main>
-    </div>
+    </>
   );
 }
