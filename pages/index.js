@@ -14,7 +14,8 @@ import Card from "@mui/material/Card";
 import TextField from "@mui/material/TextField";
 import { Link as MUILink } from "@mui/material";
 
-import { fetcher } from "../utils.js";
+import { fetcher } from "services/utils";
+import { Container, Loader, Error } from "components/utils";
 
 function TextFilter({ column: { filterValue, setFilter } }) {
   return (
@@ -103,8 +104,8 @@ export default function Home() {
     []
   );
 
-  if (error) return <div>failed to load</div>;
-  if (!data) return <div>loading...</div>;
+  if (error) return <Error />;
+  if (!data) return <Loader />;
 
   return (
     <>
@@ -114,12 +115,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="w-screen h-screen bg-pink-50 p-4 md:p-10">
+      <Container>
         <h1 className="text-3xl font-bold mb-4 text-pink-600">
           Test technique Iconosquare
         </h1>
         <UsersTable columns={columns} data={data} />
-      </main>
+      </Container>
     </>
   );
 }

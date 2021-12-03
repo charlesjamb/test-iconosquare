@@ -2,7 +2,8 @@ import useSWR from "swr";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-import { fetcher } from "/utils.js";
+import { fetcher } from "services/utils";
+import { Container, Loader, Error } from "components/utils";
 
 function Comment({ comment }) {
   return (
@@ -27,10 +28,8 @@ export default function Post() {
     fetcher
   );
 
-  if (commentsError || postError) return <div>failed to load</div>;
-  if (!comments || !post) return <div>loading...</div>;
-
-  console.log({ comments, post });
+  if (commentsError || postError) return <Error />;
+  if (!comments || !post) return <Loader />;
 
   return (
     <>
@@ -42,14 +41,14 @@ export default function Post() {
         />
       </Head>
 
-      <main className="min-w-screen min-h-screen bg-pink-50 p-4 md:p-10">
+      <Container>
         <h1 className="text-3xl font-bold mb-4 text-pink-600">{post.title}</h1>
         <p>{post.body}</p>
         <h2 className="text-lg font-bold text-pink-600 mt-4">Commentaires</h2>
         {comments.map((comment) => (
           <Comment key={comment.id} comment={comment} />
         ))}
-      </main>
+      </Container>
     </>
   );
 }

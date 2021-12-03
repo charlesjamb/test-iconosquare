@@ -9,8 +9,9 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import Button from "@mui/material/Button";
 import { Link as MUILink } from "@mui/material";
 
-import { fetcher } from "/utils.js";
-import NewPostDialog from "../../components/NewPostDialog";
+import { fetcher } from "services/utils";
+import NewPostDialog from "components/NewPostDialog";
+import { Container, Loader, Error } from "components/utils";
 
 export default function User() {
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -27,8 +28,8 @@ export default function User() {
     fetcher
   );
 
-  if (userError || postsError) return <div>failed to load</div>;
-  if (!user || !posts) return <div>loading...</div>;
+  if (userError || postsError) return <Error />;
+  if (!user || !posts) return <Loader />;
 
   return (
     <>
@@ -37,7 +38,7 @@ export default function User() {
         <meta name="description" content={`Tous les posts de ${user.name}`} />
       </Head>
 
-      <main className=" w-screen h-screen bg-pink-50 p-4 md:p-10">
+      <Container>
         <h1 className="text-3xl font-bold mb-4 text-pink-600">
           Posts de {user.name}
         </h1>
@@ -74,7 +75,7 @@ export default function User() {
             mutate(`/posts?userId=${uid}`, [...posts, newPost], false);
           }}
         />
-      </main>
+      </Container>
     </>
   );
 }
