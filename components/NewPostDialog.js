@@ -92,7 +92,6 @@ export default function NewPostDialog({
           Annuler
         </Button>
         <LoadingButton
-          color="secondary"
           onClick={handlePost}
           loading={isLoading}
           loadingPosition="start"

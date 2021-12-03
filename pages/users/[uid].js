@@ -8,6 +8,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Button from "@mui/material/Button";
 import { Link as MUILink } from "@mui/material";
+import AddIcon from "@mui/icons-material/Add";
 
 import { fetcher } from "services/utils";
 import NewPostDialog from "components/NewPostDialog";
@@ -62,6 +63,7 @@ export default function User() {
           variant="contained"
           size="large"
           sx={{ mt: 2 }}
+          startIcon={<AddIcon />}
         >
           Ajouter un post
         </Button>
