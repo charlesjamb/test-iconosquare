@@ -10,9 +10,9 @@ import Button from "@mui/material/Button";
 import { Link as MUILink } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 
-import { fetcher } from "services/utils";
-import NewPostDialog from "components/NewPostDialog";
-import { Container, Loader, Error } from "components/utils";
+import { fetcher } from "../../services/utils";
+import NewPostDialog from "../../components/NewPostDialog";
+import { Container, Loader, Error } from "../../components/utils";
 
 export default function User() {
   const [isFormOpen, setIsFormOpen] = useState(false);

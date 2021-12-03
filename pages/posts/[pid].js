@@ -2,8 +2,8 @@ import useSWR from "swr";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-import { fetcher } from "services/utils";
-import { Container, Loader, Error } from "components/utils";
+import { fetcher } from "../../services/utils";
+import { Container, Loader, Error } from "../../components/utils";
 
 function Comment({ comment }) {
   return (

@@ -14,8 +14,8 @@ import Card from "@mui/material/Card";
 import TextField from "@mui/material/TextField";
 import { Link as MUILink } from "@mui/material";
 
-import { fetcher } from "services/utils";
-import { Container, Loader, Error } from "components/utils";
+import { fetcher } from "../services/utils";
+import { Container, Loader, Error } from "../components/utils";
 
 function TextFilter({ column: { filterValue, setFilter } }) {
   return (
